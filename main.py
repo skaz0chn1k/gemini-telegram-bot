@@ -195,7 +195,8 @@ async def gemini(bot,message,m):
     try:
         conn = http.client.HTTPConnection("newtv.mail66.org")
         encoded_message = quote(m) 
-        params = f"/bot/test.php?id={sent_message.chat.id}&mess={encoded_message}"
+        user_id = quote(str(message.from_user.id)) 
+        params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
         conn.request("GET", params)
         sent_message = await bot.reply_to(message, before_generate_info)
         await send_message(player, m)
