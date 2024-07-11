@@ -39,7 +39,7 @@ docker run -d --restart=always -e TELEGRAM_BOT_API_KEY={Telegram Bot API} -e GEM
 ## (3)Deploy on Railway
 Click on the button below for a one-click deployment.
 
-[![Deploy on Railway](https://railway.app/button.svg)]([https://railway.app/template/HIsbMv?referralCode=4LyW6R](https://railway.app/template/CawDJP?referralCode=-fN2Db))
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/CawDJP?referralCode=-fN2Db)
 
 
 
