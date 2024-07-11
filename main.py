@@ -215,7 +215,7 @@ async def gemini_pro(bot,message,m):
         player.history = player.history[2:]
     try:
         sent_message = await bot.reply_to(message, before_generate_info)
-        conn = http.client.HTTPConnection("skaz.tv")
+        conn = http.client.HTTPConnection("newtv.mail66.org")
         user_id = quote(str(message.from_user.id))  
         encoded_message = quote(m) 
         params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
