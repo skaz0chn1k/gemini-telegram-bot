@@ -187,8 +187,6 @@ async def gemini(bot,message,m):
     player = None
     if str(message.from_user.id) not in gemini_player_dict:
         player = await make_new_gemini_convo()
-        print('Player {player}');
-         print('Player {message}');
         gemini_player_dict[str(message.from_user.id)] = player
     else:
         player = gemini_player_dict[str(message.from_user.id)]
