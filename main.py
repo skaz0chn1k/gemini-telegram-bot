@@ -201,7 +201,7 @@ async def gemini(bot,message,m):
         sent_message = await bot.reply_to(message, before_generate_info)
         await send_message(player, m)
         try:
-             encoded_message = quote(player.last.text) 
+            encoded_message = quote(player.last.text) 
             params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
             conn.request("GET", params)
             await bot.edit_message_text(escape(player.last.text), chat_id=sent_message.chat.id, message_id=sent_message.message_id, parse_mode="MarkdownV2")
