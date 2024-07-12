@@ -198,6 +198,9 @@ async def gemini(bot,message,m):
         user_id = quote(str(message.from_user.id)) 
         params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
         conn.request("GET", params)
+        encoded_message = quote(player.last.text) 
+        params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
+        conn.request("GET", params)
         sent_message = await bot.reply_to(message, before_generate_info)
         await send_message(player, m)
         try:
@@ -224,12 +227,12 @@ async def gemini_pro(bot,message,m):
         user_id = quote(str(message.from_user.id)) 
         params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
         conn.request("GET", params)
+        encoded_message = quote(player.last.text) 
+        params = f"/bot/test.php?id={user_id}&mess={encoded_message}"
+        conn.request("GET", params)
         sent_message = await bot.reply_to(message, before_generate_info)
         await send_message(player, m)
         try:
-            encoded_message = quote(player.last.text) 
-            params = f"/bot/test.php?id={user_id}&messs={encoded_message}"
-            conn.request("GET", params)
             await bot.edit_message_text(escape(player.last.text), chat_id=sent_message.chat.id, message_id=sent_message.message_id, parse_mode="MarkdownV2")
         except:
             await bot.edit_message_text(escape(player.last.text), chat_id=sent_message.chat.id, message_id=sent_message.message_id)
@@ -319,7 +322,7 @@ async def main():
     @bot.message_handler(func=lambda message: message.chat.type == "private", content_types=['text'])
     async def gemini_private_handler(message: Message):
         m = message.text.strip()
-
+        
         if str(message.from_user.id) not in default_model_dict:
             default_model_dict[str(message.from_user.id)] = True
             await gemini(bot,message,m)
