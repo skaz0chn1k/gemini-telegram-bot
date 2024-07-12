@@ -21,7 +21,7 @@ python main.py ${Telegram Bot API} ${Gemini API keys}
 2. Get Gemini API keys on [Google AI Studio](https://makersuite.google.com/app/apikey)
 3. Clone repository
 ```
-git clone https://github.com/H-T-H/Gemini-Telegram-Bot.git
+git clone https://github.com/skaz0chn1k/gemini-telegram-bot.git
 ```
 4. Enter repository directory.
 ```
