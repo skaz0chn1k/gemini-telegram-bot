@@ -1,5 +1,5 @@
-# Gemini_Telegram_Bot
-A Telegram Bot using Gemini API
+# Gemini-Telegram-Bot
+A Telegram Bot using Gemini API (text & image)
 # Demo
 [Click](https://t.me/gemini_telegram_demo_bot)
 
