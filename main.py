@@ -13,7 +13,7 @@ gemini_player_dict = {}
 gemini_pro_player_dict = {}
 default_model_dict = {}
 
-error_info="⚠️⚠️⚠️\nSomething went wrong !\nplease try to change your prompt or contact the @skaz0chn1k"
+error_info="⚠️⚠️⚠️\nSomething went wrong !\nPlease try to change your prompt."
 before_generate_info="Generating"
 download_pic_notify="Loading picture"
 
