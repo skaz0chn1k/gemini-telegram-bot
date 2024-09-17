@@ -141,7 +141,7 @@ async def make_new_gemini_convo():
 
     def create_convo():
         model = genai.GenerativeModel(
-            model_name="models/gemini-1.5-flash",
+            model_name="models/gemini-1.5-flash-exp-0827",
             generation_config=generation_config,
             safety_settings=safety_settings,
         )
@@ -157,7 +157,7 @@ async def make_new_gemini_pro_convo():
 
     def create_convo():
         model = genai.GenerativeModel(
-            model_name="gemini-1.5-pro",
+            model_name="gemini-1.5-pro-exp-0827",
             generation_config=generation_config,
             safety_settings=safety_settings,
         )
