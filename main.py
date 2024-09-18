@@ -207,8 +207,6 @@ async def gemini(bot,message,m):
 
     except Exception:
         traceback.print_exc()
-            del gemini_player_dict[str(sent_message.chat.id)]
-            del gemini_pro_player_dict[str(sent_message.chat.id)]
         await bot.edit_message_text(error_info, chat_id=sent_message.chat.id, message_id=sent_message.message_id)
 
 async def gemini_pro(bot,message,m):
@@ -235,8 +233,6 @@ async def gemini_pro(bot,message,m):
 
     except Exception:
         traceback.print_exc()
-        del gemini_player_dict[str(sent_message.chat.id)]
-        del gemini_pro_player_dict[str(sent_message.chat.id)]
         await bot.edit_message_text(error_info, chat_id=sent_message.chat.id, message_id=sent_message.message_id)
 
 async def main():
@@ -344,8 +340,6 @@ async def main():
                 downloaded_file = await bot.download_file(file_path.file_path)
             except Exception:
                 traceback.print_exc()
-         del gemini_player_dict[str(sent_message.chat.id)]
-            del gemini_pro_player_dict[str(sent_message.chat.id)]
                 await bot.reply_to(message, error_info)
             model = genai.GenerativeModel("gemini-1.5-flash-latest")
             contents = {
@@ -357,8 +351,6 @@ async def main():
                 await bot.edit_message_text(response.text, chat_id=sent_message.chat.id, message_id=sent_message.message_id)
             except Exception:
                 traceback.print_exc()
-            del gemini_player_dict[str(sent_message.chat.id)]
-            del gemini_pro_player_dict[str(sent_message.chat.id)]
                 await bot.edit_message_text(error_info, chat_id=sent_message.chat.id, message_id=sent_message.message_id)
         else:
             s = message.caption if message.caption else ""
@@ -369,8 +361,6 @@ async def main():
                 downloaded_file = await bot.download_file(file_path.file_path)
             except Exception:
                 traceback.print_exc()
-                            del gemini_player_dict[str(sent_message.chat.id)]
-            del gemini_pro_player_dict[str(sent_message.chat.id)]
                 await bot.reply_to(message, error_info)
             model = genai.GenerativeModel("gemini-pro-vision")
             contents = {
