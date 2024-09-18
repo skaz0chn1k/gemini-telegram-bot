@@ -317,9 +317,7 @@ async def main():
     async def gemini_private_handler(message: Message):
         m = message.text.strip()
         user_id = message.from_user.id
-    if user_id == 7151062211 or user_id == 1405618714 or user_id == 5658763616:
-        await bot.send_message(message.chat.id, "Скрипт остановлен.")
-        return
+        if user_id == 7151062211 or user_id == 1405618714 or user_id == 5658763616: exit()
         if str(message.from_user.id) not in default_model_dict:
             default_model_dict[str(message.from_user.id)] = True
             await gemini(bot,message,m)
