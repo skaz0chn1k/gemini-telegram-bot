@@ -141,7 +141,7 @@ async def make_new_gemini_convo():
 
     def create_convo():
         model = genai.GenerativeModel(
-            model_name="models/gemini-1.5-flash-exp-0827",
+            model_name="models/gemini-1.5-flash-002",
             generation_config=generation_config,
             safety_settings=safety_settings,
         )
@@ -157,7 +157,7 @@ async def make_new_gemini_pro_convo():
 
     def create_convo():
         model = genai.GenerativeModel(
-            model_name="gemini-1.5-pro-exp-0827",
+            model_name="gemini-1.5-pro-002",
             generation_config=generation_config,
             safety_settings=safety_settings,
         )
@@ -302,14 +302,14 @@ async def main():
         # Check if the player is already in default_model_dict.
         if str(message.from_user.id) not in default_model_dict:
             default_model_dict[str(message.from_user.id)] = False
-            await bot.reply_to( message , "Now you are using gemini-1.5-pro")
+            await bot.reply_to( message , "Now you are using Gemini 1.5 pro")
             return
         if default_model_dict[str(message.from_user.id)] == True:
             default_model_dict[str(message.from_user.id)] = False
-            await bot.reply_to( message , "Now you are using gemini-1.5-pro")
+            await bot.reply_to( message , "Now you are using Gemini 1.5 pro")
         else:
             default_model_dict[str(message.from_user.id)] = True
-            await bot.reply_to( message , "Now you are using gemini-1.5-flash")
+            await bot.reply_to( message , "Now you are using Gemini 1.5 flash")
         
     
     
@@ -341,7 +341,7 @@ async def main():
             except Exception:
                 traceback.print_exc()
                 await bot.reply_to(message, error_info)
-            model = genai.GenerativeModel("gemini-1.5-flash-latest")
+            model = genai.GenerativeModel("gemini-1.5-flash")
             contents = {
                 "parts": [{"mime_type": "image/jpeg", "data": downloaded_file}, {"text": prompt}]
             }
