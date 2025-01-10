@@ -141,7 +141,7 @@ async def make_new_gemini_convo():
 
     def create_convo():
         model = genai.GenerativeModel(
-            model_name="models/gemini-2.0-flash-exp",
+            model_name="models/gemini-1.5-flash",
             generation_config=generation_config,
             safety_settings=safety_settings,
         )
@@ -251,7 +251,7 @@ async def main():
     await bot.set_my_commands(
         commands=[
             telebot.types.BotCommand("start", "Start"),
-            telebot.types.BotCommand("gemini", "using gemini-2.0-flash-exp"),
+            telebot.types.BotCommand("gemini", "using gemini-1.5-flash"),
             telebot.types.BotCommand("gemini_pro", "using gemini-1.5-pro"),
             telebot.types.BotCommand("clear", "Clear all history"),
             telebot.types.BotCommand("switch","switch default model")
@@ -309,7 +309,7 @@ async def main():
             await bot.reply_to( message , "Now you are using Gemini 1.5 pro")
         else:
             default_model_dict[str(message.from_user.id)] = True
-            await bot.reply_to( message , "Now you are using Gemini 2 flash")
+            await bot.reply_to( message , "Now you are using Gemini 1.5 flash")
         
     
     
